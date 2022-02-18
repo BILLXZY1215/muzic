@@ -1,2 +1,17 @@
 .ipynb_checkpoints/
 .DS_Store
+
+telemelody/training/template2melody/lmd_matched.tar.gz
+telemelody/training/template2melody/lmd_matched
+telemelody/training/template2melody/data/
+
+telemelody/training/lyric2rhythm/checkpoints/
+telemelody/training/lyric2rhythm/data-bin/
+
+telemelody/training/template2melody/checkpoints/
+telemelody/training/template2melody/data-bin/
+
+telemelody/inferrence/checkpoints/
+telemelody/inferrence/data-bin/
+
+deeprapper/model/

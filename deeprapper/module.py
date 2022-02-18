@@ -9,7 +9,7 @@ import torch
 import torch.nn as nn
 from torch.nn import CrossEntropyLoss
 import warnings
-from transformers.modeling_gpt2 import GPT2PreTrainedModel, Block
+from transformers.models.gpt2.modeling_gpt2 import GPT2PreTrainedModel, Block
 from transformers.configuration_utils import PretrainedConfig
 from transformers.utils import logging
 from transformers.modeling_outputs import (
