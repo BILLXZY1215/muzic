@@ -179,6 +179,9 @@ if __name__ == '__main__':
             cur_period = False
             cur_length = 0
             align_idxs = []
+            print('syllables', syllables)
+            print('clean(syllables)', clean(syllables))
+            print('clean(syllables).split()', clean(syllables).split())
             for item in clean(syllables).split():
                 if item == SEP:
                     if cur_length <= 0:
@@ -196,10 +199,8 @@ if __name__ == '__main__':
                             len([i for i in tmp if i not in [',', '.']]))
                     tmp.append(item)
                     cur_length += 1
-
             if tmp[-1] != '.':
                 tmp[-1] = '.'
-
             word_num = len([i for i in tmp if i not in [',', '.']])
 
             beats = lyric2beats.translate(syllables,
@@ -311,11 +312,10 @@ if __name__ == '__main__':
             enc = fix(notes.split())
 
             e = list(map(lambda x: int(''.join(filter(str.isdigit, x))), enc))
-            print(len(enc) // 4)
             e = [(e[i], e[i + 1], 0, e[i + 2], e[i + 3], enc_vel(127),
                   enc_ts((4, 4)), enc_tpo(80.0)) for i in range(0, len(e) // 4 * 4, 4)]
 
-            min_bar = min([i[0] for i in e])
+            min_bar = min([i[0] for i in e], default="EMPTY")
             e = [tuple(k - min_bar if j == 0 else k for j,
                        k in enumerate(i)) for i in e]
             e.sort()
