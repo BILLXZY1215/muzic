@@ -15,3 +15,8 @@ telemelody/inferrence/checkpoints/
 telemelody/inferrence/data-bin/
 
 deeprapper/model/
+
+musicbert/checkpoints/
+musicbert/lmd_full.tar.gz
+musicbert/lmd_full.zip
+musicbert/lmd_full/
