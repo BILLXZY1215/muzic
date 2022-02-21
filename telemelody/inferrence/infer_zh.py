@@ -239,7 +239,8 @@ if __name__ == '__main__':
                 if word not in [',', '.']:
                     cur_sep.extend(beats_label[word_idx])
                     cur_idx += len(beats_label[word_idx])
-                    word_idx += 1
+                    if word_idx < len(beats_label)-1:
+                        word_idx += 1
                 elif word == ',':
                     if len(cur_sep):
                         cur_sent.append(cur_sep)
