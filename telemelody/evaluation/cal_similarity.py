@@ -139,8 +139,8 @@ if __name__ == '__main__':
 
     pitch_overlap = []
     dur_overlap = []
-    print(f'hyp: {hyp_prefix}   gt: {gt_prefix}')
-    print(os.listdir(f'{hyp_prefix}/'))
+    # print(f'hyp: {hyp_prefix}   gt: {gt_prefix}')
+    # print(os.listdir(f'{hyp_prefix}/'))
     for filename in os.listdir(f'{hyp_prefix}/'):
         try:
             hyp_midi = miditoolkit.MidiFile(f'{hyp_prefix}/{filename}')
@@ -157,6 +157,8 @@ if __name__ == '__main__':
             continue
     pitch_overlap = np.array(pitch_overlap)
     dur_overlap = np.array(dur_overlap)
-    print('PITCH', np.mean(pitch_overlap), np.std(pitch_overlap))
-    print('DUR', np.mean(dur_overlap), np.std(dur_overlap))
-    print()
+    # print('PITCH -- ', 'mean:',np.mean(pitch_overlap), 'std:',np.std(pitch_overlap))
+    print('PITCH -- ', np.mean(pitch_overlap))
+    print(pitch_overlap)
+    # print('DUR', np.mean(dur_overlap), np.std(dur_overlap))
+    # print()

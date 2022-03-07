@@ -140,6 +140,7 @@ if __name__ == '__main__':
             d, cost_matrix, acc_cost_matrix, path = accelerated_dtw(
                 d1, d2, dist='euclidean')
             dtw_mean.append(d / len(d2))
+            print(dtw_mean, cost_matrix, acc_cost_matrix, path)
         except BaseException as e:
             continue
     print(np.mean(dtw_mean), np.std(dtw_mean))
