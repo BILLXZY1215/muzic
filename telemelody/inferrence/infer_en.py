@@ -308,9 +308,7 @@ if __name__ == '__main__':
                                           verbose=True,
                                           beam=1,
                                           )
-
             enc = fix(notes.split())
-
             e = list(map(lambda x: int(''.join(filter(str.isdigit, x))), enc))
             e = [(e[i], e[i + 1], 0, e[i + 2], e[i + 3], enc_vel(127),
                   enc_ts((4, 4)), enc_tpo(80.0)) for i in range(0, len(e) // 4 * 4, 4)]
